@@ -9,6 +9,7 @@ namespace RostrosFelices.Models
         public DateTime Fecha { get; set; }
         public string NombreEmpleado { get; set; }
         public string Observacion { get; set; }
-        public Cliente Cliente { get; set; }
+        public int ClienteId { get; set; }
+        public Cliente? Cliente { get; set; }
     }
 }
