@@ -3,9 +3,12 @@ using RostrosFelices.Models;
 
 namespace RostrosFelices.Data
 {
-    internal class RostrosFelicesContext : DbContext
+    public class RostrosFelicesContext : DbContext
     {
-        public DbSet<Cliente> Clientes { get; set; } 
+		public RostrosFelicesContext(DbContextOptions options) : base(options)
+		{
+		}
+		public DbSet<Cliente> Clientes { get; set; } 
         public DbSet<Servicio> Servicios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
