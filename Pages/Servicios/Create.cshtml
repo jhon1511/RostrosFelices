@@ -1,0 +1,52 @@
+﻿@page
+@model RostrosFelices.Pages.Servicios.CreateModel
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Servicio</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Servicio.NombreServicio" class="control-label"></label>
+				<input asp-for="Servicio.NombreServicio" class="for-control" />
+				<span asp-validation-for="Servicio.NombreServicio" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Servicio.Fecha" class="control-label"></label>
+				<input asp-for="Servicio.Fecha" class="for-control" />
+				<span asp-validation-for="Servicio.Fecha" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Servicio.NombreEmpleado" class="control-label"></label>
+				<input asp-for="Servicio.NombreEmpleado" class="for-control" />
+				<span asp-validation-for="Servicio.NombreEmpleado" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Servicio.Observacion" class="control-label"></label>
+				<input asp-for="Servicio.Observacion" class="for-control" />
+				<span asp-validation-for="Servicio.Observacion" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Servicio.Cliente" class="control-label"></label>
+				<input asp-for="Servicio.Cliente" class="for-control" />
+				<span asp-validation-for="Servicio.Cliente" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-3">
+				<input type="submit" value="Create" class="btn btn-success" />
+				<a asp-page="Index" class="btn btn-primary">Back to list</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
