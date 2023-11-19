@@ -14,7 +14,12 @@ namespace RostrosFelices
 			builder.Services.AddDbContext<RostrosFelicesContext>(options =>
 	            options.UseSqlServer(builder.Configuration.GetConnectionString("CiudadanosSanosDB"))
             );
-			var app = builder.Build();
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Login";
+            });
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
