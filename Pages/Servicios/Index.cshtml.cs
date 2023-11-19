@@ -21,7 +21,7 @@ namespace RostrosFelices.Pages.Servicios
 		{
 			if (_context.Clientes != null)
 			{
-				Servicios = await _context.Servicios.ToListAsync();
+				Servicios = await _context.Servicios.Include(p => p.Cliente).ToListAsync();
 			}
 		}
 	}

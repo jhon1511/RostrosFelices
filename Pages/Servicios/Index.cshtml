@@ -26,7 +26,7 @@
 				@Html.DisplayNameFor(model => model.Servicios[0].Observacion)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Servicios[0].Cliente)
+				Cliente
 			</th>
 			<th>Actions</th>
 		</tr>
@@ -48,8 +48,9 @@
 					@Html.DisplayFor(modelItem => item.Observacion)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Cliente)
+					@Html.DisplayFor(modelItem => item.Cliente.Name)
 				</td>
+				
 				<td>
 					<a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
 					<a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
